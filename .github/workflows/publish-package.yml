@@ -1,4 +1,4 @@
-name: eurek-ai/tudu-dal package
+name: publish package
 on:
   release:
     types: [created]
