@@ -1,0 +1,23 @@
+name: Automatic release tudu-dal
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  release:
+    name: Release GitHub Actions
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install --global github-release-cli
+      - run: npm run set:package-version
+      - run: github-release upload --owner ${{ secrets.REPO_OWNER }} --repo tudu-dal --tag $(./package-version.bash) --name "Version $(./package-version.bash) of @eurek-ai/tudu-dal" --token ${{ secrets.NPM_USER_TOKEN }} --body "${{ github.event.head_commit.message }}"

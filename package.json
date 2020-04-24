@@ -1,0 +1,23 @@
+{
+  "name": "@eurek-ai/witoto-ts",
+  "version": "0.0.1",
+  "description": "A lightweight library to build web components with TypeScript.",
+  "main": "dist/witoto-ts.cjs.js",
+  "browser": "dist/witoto-ts.umd.js",
+  "module": "dist/witoto-ts.es.js",
+  "typings": "./witoto-ts.d.ts",
+  "repository": "https://github.com/eurek-ai/witoto-ts",
+  "author": "Luis Adolfo Catano Hoyos<cto@eurek.ai>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "set:package-version": "chmod +x package-version.bash",
+    "install:devDependencies": "./install_dev_dependencies.bash",
+    "prepublishOnly": "npm run install:devDependencies && npm run build"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

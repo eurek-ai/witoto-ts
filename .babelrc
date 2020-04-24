@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "useBuiltIns": "usage",
+        "targets": "maintained node versions"
+      }
+    ],
+    "@babel/preset-typescript"
+  ]
+}
