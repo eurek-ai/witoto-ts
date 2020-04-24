@@ -1,6 +1,6 @@
 {
   "name": "@eurek-ai/witoto-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lightweight library to build web components with TypeScript.",
   "main": "dist/witoto-ts.cjs.js",
   "browser": "dist/witoto-ts.umd.js",
